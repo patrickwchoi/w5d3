@@ -73,8 +73,6 @@ VALUES
   (2, 2, NULL, 'make an appt with a shelter', 1),
   (3, 2, 2, 'Do you know a shleter nearby?', 2);
 
-
-
 CREATE TABLE question_likes (
   id INTEGER PRIMARY KEY,
   user_id INTEGER NOT NULL,
@@ -83,7 +81,6 @@ CREATE TABLE question_likes (
   FOREIGN KEY (question_id) REFERENCES questions(id),
   FOREIGN KEY (user_id) REFERENCES users(id)
 );
-
 
 INSERT INTO 
   question_likes (id, user_id, question_id)
