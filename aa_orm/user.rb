@@ -1,5 +1,6 @@
 require_relative "aa.rb"
 require_relative "question.rb"
+require_relative "reply.rb"
 
 class User
     attr_accessor :id, :fname, :lname
@@ -38,9 +39,13 @@ class User
     end
 
     def authored_questions
-        questions = Question.find_by_author_id(@id)
+        questions = Question.find_by_author_id(id)
         return questions
     end
 
+    def authored_replies
+      replies = Reply.find_by_user_id(id)
+      return replies
+    end
     
 end

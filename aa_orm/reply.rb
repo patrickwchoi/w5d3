@@ -1,6 +1,6 @@
 require_relative "aa.rb"
 require_relative "user.rb"
-require_relative "question"
+require_relative "question.rb"
 
 class Reply
     attr_accessor :id, :question_id, :parent_id, :body, :user_id
@@ -54,4 +54,20 @@ class Reply
       @user_id = options['user_id']
     end
 
+    def author
+      User.find_by_id(user_id)
+    end
+
+    def question
+      Question.find_by_id(question_id)
+    end
+
+    def parent_reply
+      Reply.find_by_id(parent_id)
+    end
+
+    def child_replies
+      all_replies = Reply.find_by_question_id(question_id)
+      all_replies.select { |reply| self.id == reply.parent_id}
+    end
   end
