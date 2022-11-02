@@ -50,7 +50,8 @@ INSERT INTO
 VALUES 
   (1, 1, 1),
   (2, 2, 2),
-  (3, 3, 2);
+  (3, 3, 2),
+  (4, 2, 1);
 
 
 CREATE TABLE replies (

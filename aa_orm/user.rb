@@ -47,5 +47,7 @@ class User
       replies = Reply.find_by_user_id(id)
       return replies
     end
+
+    
     
 end
