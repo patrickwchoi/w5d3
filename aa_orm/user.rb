@@ -48,6 +48,8 @@ class User
       return replies
     end
 
-    
+    def followed_questions
+      QuestionFollower.followed_questions_for_user_id(id)
+    end
     
 end
